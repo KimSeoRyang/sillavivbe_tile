@@ -28,6 +28,41 @@
 -   게임오버 시 도달했던 최고 스테이지와 레벨이 스코어보드에 기록됩니다.
 -   스코어는 브라우저에 저장되므로, 창을 닫았다가 다시 열어도 기록이 유지됩니다.
 
+## 게임 구조
+
+### 파일 구조
+
+```mermaid
+graph TD
+    A[index.html] --> B[style.css];
+    A --> C[script.js];
+```
+
+### 게임 흐름
+
+```mermaid
+graph TD
+    A(시작) --> B{사용자가 '시작' 버튼 클릭};
+    B --> C[게임 초기화<br>(startNewGame)];
+    C --> D[레벨 시작<br>(startLevel)];
+    D --> E[그리드 생성 및 순서 생성];
+    E --> F[컴퓨터가 순서 재생<br>(playSequence)];
+    F --> G{사용자 입력 대기};
+    G --> H[사용자가 타일 클릭<br>(handleTileClick)];
+    H --> I{타일이 정확한가?};
+    I -- No --> J[게임 오버<br>점수 저장<br>(endLevel false)];
+    J --> K{사용자가 '재시작' 버튼 클릭};
+    K --> C;
+    I -- Yes --> L{순서가 완료되었는가?};
+    L -- No --> G;
+    L -- Yes --> M[성공!<br>'다음 단계' 버튼 표시<br>(endLevel true)];
+    M --> N{사용자가 '다음 단계' 버튼 클릭};
+    N --> D;
+```
+
 ## 실행 방법
 
 이 게임은 웹 브라우저에서 실행됩니다. 다운로드한 폴더에 있는 `index.html` 파일을 웹 브라우저(Chrome, Edge, Firefox 등)로 열면 바로 플레이할 수 있습니다.
+
+## 실행 주소
+- https://kimseoryang.github.io/sillavivbe_tile/
