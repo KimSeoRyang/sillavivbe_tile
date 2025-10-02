@@ -66,3 +66,6 @@ graph TD
 
 ## 실행 주소
 - https://kimseoryang.github.io/sillavivbe_tile/
+
+## 발표 자료 주소
+- https://gamma.app/docs/SillaVibe--fisi9w92813okq0
