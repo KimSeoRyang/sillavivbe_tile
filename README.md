@@ -42,21 +42,21 @@ graph TD
 
 ```mermaid
 graph TD
-    A(시작) --> B{사용자가 '시작' 버튼 클릭};
-    B --> C[게임 초기화<br>(startNewGame)];
-    C --> D[레벨 시작<br>(startLevel)];
-    D --> E[그리드 생성 및 순서 생성];
-    E --> F[컴퓨터가 순서 재생<br>(playSequence)];
-    F --> G{사용자 입력 대기};
-    G --> H[사용자가 타일 클릭<br>(handleTileClick)];
-    H --> I{타일이 정확한가?};
-    I -- No --> J[게임 오버<br>점수 저장<br>(endLevel false)];
-    J --> K{사용자가 '재시작' 버튼 클릭};
+    A("시작") --> B{"사용자가 '시작' 버튼 클릭"};
+    B --> C["게임 초기화<br>(startNewGame)"];
+    C --> D["레벨 시작<br>(startLevel)"];
+    D --> E["그리드 생성 및 순서 생성"];
+    E --> F["컴퓨터가 순서 재생<br>(playSequence)"];
+    F --> G{"사용자 입력 대기"};
+    G --> H["사용자가 타일 클릭<br>(handleTileClick)"];
+    H --> I{"타일이 정확한가?"};
+    I -- No --> J["게임 오버<br>점수 저장<br>(endLevel false)"];
+    J --> K{"사용자가 '재시작' 버튼 클릭"};
     K --> C;
-    I -- Yes --> L{순서가 완료되었는가?};
+    I -- Yes --> L{"순서가 완료되었는가?"};
     L -- No --> G;
-    L -- Yes --> M[성공!<br>'다음 단계' 버튼 표시<br>(endLevel true)];
-    M --> N{사용자가 '다음 단계' 버튼 클릭};
+    L -- Yes --> M["성공!<br>'다음 단계' 버튼 표시<br>(endLevel true)"];
+    M --> N{"사용자가 '다음 단계' 버튼 클릭"};
     N --> D;
 ```
 
