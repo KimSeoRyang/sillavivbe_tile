@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SillaVibe Tile Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>SillaVibe Tile Game</h1>
+        <p id="message">시작 버튼을 눌러주세요.</p>
+        <p>스테이지: <span id="stage-display">1</span> - <span id="level-display">1</span></p>
+        <div id="tile-grid">
+        </div>
+        <button id="startButton">시작</button>
+        <button id="nextLevelButton" style="display: none;">다음 단계</button>
+    </div>
+
+    <div id="scoreboard">
+        <h2>스코어보드</h2>
+        <ol id="score-list"></ol>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
